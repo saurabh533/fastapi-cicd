@@ -1,0 +1,14 @@
+.git
+.github
+gcp
+cloudbuild*.yaml
+tests
+*.md
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.secrets
+Makefile

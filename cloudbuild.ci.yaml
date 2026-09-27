@@ -1,0 +1,16 @@
+# GCP "CI" — runs on pull requests via a Cloud Build trigger.
+# Pure validation: install, lint, test. Builds/deploys nothing.
+steps:
+  - id: lint-and-test
+    name: python:3.12-slim
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -e
+        pip install -r requirements-dev.txt
+        ruff check .
+        pytest -v
+
+options:
+  logging: CLOUD_LOGGING_ONLY

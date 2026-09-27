@@ -1,0 +1,5 @@
+# Dev/CI dependencies. Installs runtime deps too.
+-r requirements.txt
+pytest
+httpx        # required by fastapi's TestClient
+ruff         # linter

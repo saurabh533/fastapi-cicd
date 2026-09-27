@@ -1,0 +1,7 @@
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+# E/F = pyflakes + pycodestyle basics, I = import sorting.
+select = ["E", "F", "I"]
