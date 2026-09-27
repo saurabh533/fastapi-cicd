@@ -41,3 +41,8 @@ def list_items(max_price: float | None = None):
     if max_price is not None:
         items = [i for i in items if i["price"] <= max_price]
     return items
+
+
+@app.get("/ping")
+def ping():
+    return {"pong": True}
