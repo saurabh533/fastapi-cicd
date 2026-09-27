@@ -33,3 +33,11 @@ def read_item(item_id: int):
     if item is None:
         raise HTTPException(status_code=404, detail="Item not found")
     return {"item_id": item_id, **item}
+
+
+@app.get("/items")
+def list_items(max_price: float | None = None):
+    items = [{"item_id": k, **v} for k, v in ITEMS.items()]
+    if max_price is not None:
+        items = [i for i in items if i["price"] <= max_price]
+    return items
