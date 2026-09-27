@@ -30,3 +30,9 @@ def test_read_item_not_found():
     resp = client.get("/items/999")
     assert resp.status_code == 404
     assert resp.json()["detail"] == "Item not found"
+
+
+def test_list_items_filter():
+    resp = client.get("/items", params={"max_price": 10})
+    assert resp.status_code == 200
+    assert [i["item_id"] for i in resp.json()] == [1]
