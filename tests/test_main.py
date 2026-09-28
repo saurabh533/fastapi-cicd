@@ -36,3 +36,7 @@ def test_list_items_filter():
     resp = client.get("/items", params={"max_price": 10})
     assert resp.status_code == 200
     assert [i["item_id"] for i in resp.json()] == [1]
+
+
+def test_ping():
+    assert client.get("/ping").json() == {"pong": True}

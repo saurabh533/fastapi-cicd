@@ -9,7 +9,7 @@
 set -euo pipefail
 
 # ---- Config (override with env vars) ----
-PROJECT_ID="${PROJECT_ID:?set PROJECT_ID, e.g. PROJECT_ID=my-proj bash gcp/setup.sh}"
+PROJECT_ID="${PROJECT_ID:-interview-509017}"
 REGION="${REGION:-us-central1}"
 REPO="${REPO:-demo}"
 SERVICE="${SERVICE:-demo-api}"
